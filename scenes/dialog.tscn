@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://8lvo7jocorok"]
+[gd_scene load_steps=5 format=3 uid="uid://8lvo7jocorok"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Core/DialogicGameHandler.gd" id="1_dialogic"]
 [ext_resource type="Script" path="res://scenes/dialog.gd" id="1_hp4si"]
 [ext_resource type="Script" path="res://scripts/register_event_waittime.gd" id="2_register"]
+[ext_resource type="Script" path="res://scripts/show_dialogic_time.gd" id="3_showtime"]
 
 [node name="Dialog" type="Node2D"]
 script = ExtResource("1_hp4si")
@@ -12,3 +13,14 @@ script = ExtResource("1_dialogic")
 
 [node name="CustomEventRegister" type="Node" parent="."]
 script = ExtResource("2_register")
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="ShowTime" type="Label" parent="UILayer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 200.0
+offset_bottom = 42.0
+text = "Time Elapsed: --"
+script = ExtResource("3_showtime")

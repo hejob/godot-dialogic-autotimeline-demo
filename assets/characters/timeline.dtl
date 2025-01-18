@@ -2,27 +2,27 @@
 
 [wait_time]
 join character01 left [animation="Slide In Left"]
-[wait_time time="5.0"]
+[wait_time time="3.0"]
 character01: [aa]hey starts
-[wait_time time="10.0"]
+[wait_time time="5.0"]
 update character01 [animation="Shake X" length="0.8"]
 character01: [aa]next it said
-[wait_time time="15.0"]
+[wait_time time="7.0"]
 
 
 
-character01: Original type
+character01: [aa]Next1
 
 join character01 left [animation="Slide In Left"]
 character01: [aa]hey starts
-[wait time="0.5" hide_text="false"]
+[wait_time time="11"]
 update character01 [animation="Shake X" length="0.8"]
 character01: [aa]next it said
-[wait time="0.5" hide_text="false"]
+[wait_time time="12"]
 
 join character02 right [animation="Slide In Right"]
 character02: [aa]hey i came also
-[wait time="0.5" hide_text="false"]
+[wait_time time="13"]
 update character02 [animation="Tada" length="1.0"]
 character02: [aa]next it said
 [wait time="0.5" hide_text="false"]
