@@ -1,0 +1,18 @@
+[background arg="res://assets/backgrounds/background_1.png" fade="0.0"]
+
+join character01 left [animation="Slide In Left"]
+character01: [aa]hey starts
+[wait time="0.5" hide_text="false"]
+update character01 [animation="Shake X" length="0.8"]
+character01: [aa]next it said
+[wait time="0.5" hide_text="false"]
+
+join character02 right [animation="Slide In Right"]
+character02: [aa]hey i came also
+[wait time="0.5" hide_text="false"]
+update character02 [animation="Tada" length="1.0"]
+character02: [aa]next it said
+[wait time="0.5" hide_text="false"]
+
+
+[wait_input hide_text="false"]

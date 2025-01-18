@@ -1,0 +1,34 @@
+[gd_resource type="Animation" load_steps=2 format=3 uid="uid://bteswnknscap3"]
+
+[sub_resource type="GDScript" id="GDScript_o0nvg"]
+script/source = "extends Resource
+
+static func create_shake_animation() -> Animation:
+    var animation = Animation.new()
+    
+    # Create position track
+    var track_index = animation.add_track(Animation.TYPE_VALUE)
+    animation.track_set_path(track_index, \":position\")
+    
+    # Add keyframes for shaking
+    var duration = 0.5
+    var intensity = 5.0
+    var frames = 10
+    
+    for i in range(frames):
+        var time = (duration / frames) * i
+        var offset = Vector2(
+            randf_range(-intensity, intensity),
+            randf_range(-intensity, intensity)
+        )
+        
+        animation.track_insert_key(track_index, time, offset)
+    
+    # Add final keyframe to reset position
+    animation.track_insert_key(track_index, duration, Vector2.ZERO)
+    
+    return animation
+"
+
+[resource]
+script = SubResource("GDScript_o0nvg")

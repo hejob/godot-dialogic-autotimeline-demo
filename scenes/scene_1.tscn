@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3n33syvse808"]
+
+[ext_resource type="Texture2D" uid="uid://caosipge5luhf" path="res://assets/backgrounds/background_1.png" id="1_11111"]
+[ext_resource type="Script" path="res://scripts/dialog_box.gd" id="2_11111"]
+[ext_resource type="Texture2D" uid="uid://b8q6c5i7mccyc" path="res://assets/dialog_frames/dialog_frame.png" id="3_11111"]
+[ext_resource type="Script" path="res://scripts/character.gd" id="4_11111"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ujkg3"]
+font_size = 48
+
+[node name="Scene1" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_11111")
+centered = false
+
+[node name="DialogBox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_top = -200.0
+offset_right = 480.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_11111")
+
+[node name="DialogFrame" type="TextureRect" parent="DialogBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -279.5
+offset_top = -80.0
+offset_right = 285.5
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_11111")
+
+[node name="MessageLabel" type="Label" parent="DialogBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is a test message"
+label_settings = SubResource("LabelSettings_ujkg3")
+autowrap_mode = 3
+
+[node name="Character1" type="Sprite2D" parent="."]
+position = Vector2(200, 400)
+script = ExtResource("4_11111")
+expressions = {
+"normal": null
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
