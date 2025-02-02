@@ -4,7 +4,7 @@
 join character01 left [animation="Slide In Left"]
 [wait_time time="3.0"]
 character01: [aa]hey starts
-[wait_time time="5.0"]
+[wait_time time="5.5"]
 update character01 [animation="Shake X" length="0.8"]
 character01: [aa]next it said
 [wait_time time="7.0"]

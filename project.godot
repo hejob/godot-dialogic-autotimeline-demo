@@ -23,12 +23,12 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "character01": "res://characters/character01.dch",
-"character02": "res://assets/backgrounds/character02.dch"
+"character02": "res://characters/character02.dch"
 }
 directories/dtl_directory={
-"timeline": "res://assets/characters/timeline.dtl"
+"timeline": "res://dialogs/timeline.dtl"
 }
-layout/style_list=["res://assets/characters/style01.tres"]
+layout/style_list=["res://dialogs/style01.tres"]
 layout/default_style="res://assets/characters/style01.tres"
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"
@@ -54,6 +54,12 @@ timer/process_in_physics=false
 text/autopauses={}
 text/autoadvance_fixed_delay=0.2
 text/absolute_autopauses=false
+variables={}
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [editor_plugins]
 

@@ -1,4 +1,9 @@
-# scripts/scene_controller.gd
+[gd_scene load_steps=3 format=3 uid="uid://cy4ebkbdfsu21"]
+
+[ext_resource type="PackedScene" uid="uid://8lvo7jocorok" path="res://scenes/dialog.tscn" id="2_n6mq0"]
+
+[sub_resource type="GDScript" id="GDScript_8pd5n"]
+script/source = "# scripts/scene_controller.gd
 extends Node
 
 @export var scenes : Array[PackedScene]
@@ -10,16 +15,16 @@ var timer
 
 func _ready():
 	if scenes.size() == 0:
-		push_error("No scenes added to scene controller")
+		push_error(\"No scenes added to scene controller\")
 		return
 	if scene_duration.size() != scenes.size():
-		push_error("Scene duration array size not match with scenes array size")
+		push_error(\"Scene duration array size not match with scenes array size\")
 		return
 	load_scene()
 	#load_dialog_timeline()
 
 func load_dialog_timeline():
-	var dialog_timeline = load("res://assets/characters/timeline.dtl")
+	var dialog_timeline = load(\"res://dialogs/timeline.dtl\")
 	var dialog_timeline_instance = dialog_timeline.instantiate()
 	add_child(dialog_timeline_instance)
 
@@ -40,6 +45,14 @@ func load_scene():
 func _on_timer_timeout():
 	current_scene_index += 1
 	if current_scene_index >= scenes.size():
-		print("All scenes finished")
+		print(\"All scenes finished\")
 		return
 	load_scene()
+"
+
+[node name="Main" type="Node2D"]
+script = SubResource("GDScript_8pd5n")
+scenes = Array[PackedScene]([ExtResource("2_n6mq0")])
+scene_duration = Array[float]([0.0, 0.0, 0.0])
+
+[node name="Dialog" parent="." instance=ExtResource("2_n6mq0")]
