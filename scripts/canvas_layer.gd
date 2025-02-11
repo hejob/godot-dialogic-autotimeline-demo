@@ -4,8 +4,8 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	push_warning("canvas ready")
-	var node = get_node("AnimationPlayerRoot")
-	node.play("new_animation")
+	#var node = get_node("AnimationPlayerRoot")
+	#node.play("new_animation")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
