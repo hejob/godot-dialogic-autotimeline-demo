@@ -7,9 +7,12 @@
 join character01 left [animation="Slide In Left"]
 character01: [aa]指揮官 お久しぶりです　ステンです　またお会いしましたね
 [wait_time time="8.0"]
+
 join character02 right [animation="Slide In Right"]
+[signal arg="startanim01"]
 character02: [aa]やほう スコーピオンだよ 指揮官　ちゃんと元気にしてだ？
 [wait_time time="16.0"]
+[signal arg="stopanim01"]
 update character01 [animation="Tada" length="0.8"]
 character01: [aa]さて　いよいよやってきました　ドルフロ大型イベント 連鎖分裂　今回も私たちで詳しく解説していきたいとおもいます
 [wait_time time="26.0"]
@@ -66,6 +69,5 @@ character02: [aa]うわぁ今回も見どころ満載だねぇ
 [wait_time time="121.0"]
 update character01 [animation="Tada" length="0.8"]
 character01: [aa]それではさっそくスタート！
-[wait]
+[wait time="1.0"]
 leave --All--
-

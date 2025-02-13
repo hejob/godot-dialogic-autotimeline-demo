@@ -22,3 +22,6 @@ offset_right = 200.0
 offset_bottom = 42.0
 text = "Time Elapsed: --"
 script = ExtResource("3_showtime")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 101
