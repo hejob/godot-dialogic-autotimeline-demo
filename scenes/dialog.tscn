@@ -10,6 +10,8 @@ script = ExtResource("1_hp4si")
 [node name="DialogicNode" type="Node" parent="."]
 script = ExtResource("1_dialogic")
 
+[node name="WaitTimer" type="Timer" parent="DialogicNode"]
+
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 100
 

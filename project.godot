@@ -55,6 +55,8 @@ text/autopauses={}
 text/autoadvance_fixed_delay=0.2
 text/absolute_autopauses=false
 variables={}
+text/autocolor_names=true
+portraits/default_portrait=""
 
 [display]
 

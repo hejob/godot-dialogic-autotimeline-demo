@@ -20,7 +20,8 @@ func _on_timer_timeout() -> void:
 
 func onShowText() -> void:
 	if Dialogic.has_subsystem("Waittime"):
-		var elapsed = Dialogic.Waittime.get_elapsed_time()
+		var Waittime = Dialogic.get_subsystem("Waittime")
+		var elapsed = Waittime.get_elapsed_time()
 		text = "Time Elapsed: %.1f s" % elapsed
 	else:
 		var timeline_start_time = -1.0
