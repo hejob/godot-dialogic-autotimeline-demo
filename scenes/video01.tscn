@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxkw0hxerco2e"]
+
+[ext_resource type="VideoStream" uid="uid://dr1vrqxg60v6c" path="res://assets/movies/bus.ogv" id="1_cm4hi"]
+
+[node name="Video01" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = 326.0
+offset_top = 133.0
+offset_right = 875.0
+offset_bottom = 495.0
+stream = ExtResource("1_cm4hi")
+autoplay = true

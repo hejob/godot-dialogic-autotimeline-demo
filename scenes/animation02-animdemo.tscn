@@ -1,0 +1,609 @@
+[gd_scene load_steps=36 format=3 uid="uid://dd1nccyyqi0d0"]
+
+[ext_resource type="Texture2D" uid="uid://cqenb4cufneou" path="res://assets/characters/c01 normal.png" id="1_7bqm6"]
+[ext_resource type="Texture2D" uid="uid://bt7uqp7ih63r1" path="res://assets/characters/c02 normal.png" id="2_vcp3w"]
+[ext_resource type="Shader" path="res://scenes/shaders/animation02-slider.gdshader" id="3_8rkq2"]
+[ext_resource type="Texture2D" uid="uid://ivcusfwd1664" path="res://icon.svg" id="4_2oi5e"]
+[ext_resource type="Shader" path="res://scenes/shaders/animation02.gdshader" id="5_va1ix"]
+[ext_resource type="Script" path="res://scenes/shaders/mask.gd" id="6_ux3ot"]
+[ext_resource type="Shader" path="res://scenes/shaders/animation02-d1.gdshader" id="7_awa8n"]
+[ext_resource type="Material" uid="uid://b8vr6tps6cs45" path="res://scenes/shaders/mask_shader_material.tres" id="7_fi570"]
+[ext_resource type="Script" path="res://scenes/shaders/viewport_mask.gd" id="8_tpc17"]
+[ext_resource type="Shader" path="res://scenes/shaders/animation02-maskquad.gdshader" id="9_rnekj"]
+[ext_resource type="Shader" path="res://scenes/shaders/animation02-maskchild.gdshader" id="10_1s8eh"]
+[ext_resource type="Shader" path="res://scenes/shaders/mask-simplex.gdshader" id="12_ifm3m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dcqgq"]
+shader = ExtResource("3_8rkq2")
+shader_parameter/alpha = 0.5
+
+[sub_resource type="Gradient" id="Gradient_lo77m"]
+offsets = PackedFloat32Array(0.20045)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k4jnj"]
+gradient = SubResource("Gradient_lo77m")
+fill_to = Vector2(0.367521, 0.401709)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3srxg"]
+shader = ExtResource("3_8rkq2")
+shader_parameter/alpha = 0.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_evk01"]
+
+[sub_resource type="Animation" id="Animation_dxy72"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(367, 351)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(977, 349)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/TextureRect:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("GradientTexture2D_k4jnj")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/TextureRect:texture:gradient")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Gradient_lo77m")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("UseParentShader:material:shader_parameter/alpha")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.4]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("UseParentShader:material:shader_parameter/xx")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ViewportMaskWithScriptInit/MaskViewport/MaskQuad:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ViewportMask/MaskViewport/MaskColorRect:material:shader_parameter/alpha")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ViewportMask/MaskViewport/MaskColorRect:material:shader_parameter/xx")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s5a6d"]
+gradient = SubResource("Gradient_lo77m")
+
+[sub_resource type="Animation" id="Animation_glghh"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(367, 351), Vector2(148, 466)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(977, 349), Vector2(1136, 464)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.297091, 0.283493)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.273885, 0.258554)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/TextureRect:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 1.66667, 1.96667, 2.4, 3),
+"transitions": PackedFloat32Array(0.933033, 1, 1, 1, 1),
+"update": 0,
+"values": [SubResource("GradientTexture2D_k4jnj"), SubResource("GradientTexture2D_s5a6d"), SubResource("GradientTexture2D_k4jnj"), SubResource("GradientTexture2D_k4jnj"), SubResource("GradientTexture2D_k4jnj")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("CanvasLayer/TextureRect:texture:gradient")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [SubResource("Gradient_lo77m"), SubResource("Gradient_lo77m"), SubResource("Gradient_lo77m")]
+}
+
+[sub_resource type="Animation" id="Animation_tidyo"]
+resource_name = "shader-demo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UseParentShader:material:shader_parameter/alpha")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.9, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UseParentShader:material:shader_parameter/xx")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_md2ch"]
+resource_name = "viewportmask-demo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ViewportMaskWithScriptInit/MaskViewport/MaskQuad:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.633333, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(300, 0), Vector2(0, 333.333), Vector2(500, 500), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_13nvy"]
+resource_name = "viewportmask-table"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ViewportMask/MaskViewport/MaskColorRect:material:shader_parameter/alpha")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ViewportMask/MaskViewport/MaskColorRect:material:shader_parameter/xx")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ccsk"]
+_data = {
+"RESET": SubResource("Animation_dxy72"),
+"new_animation": SubResource("Animation_glghh"),
+"shader-demo": SubResource("Animation_tidyo"),
+"viewportmask-demo": SubResource("Animation_md2ch"),
+"viewportmask-table": SubResource("Animation_13nvy")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0hfkr"]
+shader = ExtResource("5_va1ix")
+shader_parameter/alpha = 0.5
+
+[sub_resource type="Gradient" id="Gradient_qfux4"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qvcr2"]
+gradient = SubResource("Gradient_qfux4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kiacx"]
+shader = ExtResource("7_awa8n")
+shader_parameter/mask_position = null
+shader_parameter/mask_scale = null
+
+[sub_resource type="Gradient" id="Gradient_rmbcb"]
+offsets = PackedFloat32Array(0, 0.00663717, 0.973451, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.684504, 0.349278, 0.257242, 1, 0.95784, 0.913044, 0.900745, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g4cpj"]
+gradient = SubResource("Gradient_rmbcb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8i1j7"]
+shader = ExtResource("9_rnekj")
+shader_parameter/softness = 0.3
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3b1xy"]
+viewport_path = NodePath("ViewportMaskWithScriptInit/MaskViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_53vvu"]
+shader = ExtResource("10_1s8eh")
+shader_parameter/mask_position = null
+shader_parameter/mask_scale = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3hgjy"]
+shader = ExtResource("12_ifm3m")
+shader_parameter/alpha = 1.0
+shader_parameter/xx = 0.5
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_exp6q"]
+viewport_path = NodePath("ViewportMask/MaskViewport")
+
+[node name="Animation02" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(367, 351)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7bqm6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(977, 349)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vcp3w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_dcqgq")
+offset_left = 311.0
+offset_top = 51.0
+offset_right = 1000.0
+offset_bottom = 609.0
+texture = SubResource("GradientTexture2D_k4jnj")
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_3srxg")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Node2D"]
+modulate = Color(0.64, 0.4672, 0.4672, 1)
+position = Vector2(657.375, 326.625)
+scale = Vector2(653.25, 532.75)
+texture = SubResource("CanvasTexture_evk01")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Node2D"]
+modulate = Color(0.799931, 0.379346, 0.154867, 1)
+position = Vector2(658, 147.156)
+scale = Vector2(649.625, 83.6875)
+texture = SubResource("CanvasTexture_evk01")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/Node2D"]
+position = Vector2(652, 340)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer/Node2D"]
+position = Vector2(848, 340)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D5" type="Sprite2D" parent="CanvasLayer/Node2D"]
+position = Vector2(451, 342)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D6" type="Sprite2D" parent="CanvasLayer/Node2D"]
+position = Vector2(653, 484)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D7" type="Sprite2D" parent="CanvasLayer/Node2D"]
+position = Vector2(849, 484)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D8" type="Sprite2D" parent="CanvasLayer/Node2D"]
+position = Vector2(452, 486)
+texture = ExtResource("4_2oi5e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7ccsk")
+}
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_0hfkr")
+position = Vector2(167, 407)
+texture = ExtResource("4_2oi5e")
+
+[node name="Mask" type="Sprite2D" parent="."]
+visible = false
+clip_children = 1
+position = Vector2(643.5, 350)
+scale = Vector2(7.67188, 5.46875)
+texture = SubResource("GradientTexture2D_qvcr2")
+script = ExtResource("6_ux3ot")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Mask"]
+position = Vector2(2.02037, -3.10857)
+texture = ExtResource("4_2oi5e")
+
+[node name="Mask2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(81, 84)
+texture = SubResource("GradientTexture2D_qvcr2")
+script = ExtResource("6_ux3ot")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Mask2"]
+material = SubResource("ShaderMaterial_kiacx")
+position = Vector2(2.02037, -3.10857)
+texture = ExtResource("4_2oi5e")
+
+[node name="UseParentShader" type="Sprite2D" parent="."]
+visible = false
+material = ExtResource("7_fi570")
+
+[node name="Sprite2D6" type="Sprite2D" parent="UseParentShader"]
+visible = false
+use_parent_material = true
+position = Vector2(463, 339)
+texture = ExtResource("4_2oi5e")
+
+[node name="TextureRect" type="TextureRect" parent="UseParentShader"]
+visible = false
+material = SubResource("ShaderMaterial_dcqgq")
+use_parent_material = true
+offset_left = 311.0
+offset_top = 51.0
+offset_right = 1000.0
+offset_bottom = 609.0
+texture = SubResource("GradientTexture2D_k4jnj")
+
+[node name="Node2D" type="Node2D" parent="UseParentShader"]
+material = SubResource("ShaderMaterial_3srxg")
+use_parent_material = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UseParentShader/Node2D"]
+use_parent_material = true
+position = Vector2(658.5, 354.5)
+scale = Vector2(10.6094, 8.39062)
+texture = SubResource("GradientTexture2D_g4cpj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="UseParentShader/Node2D"]
+modulate = Color(0.799931, 0.379346, 0.154867, 1)
+use_parent_material = true
+position = Vector2(658, 147.156)
+scale = Vector2(649.625, 83.6875)
+texture = SubResource("CanvasTexture_evk01")
+
+[node name="Sprite2D3" type="Sprite2D" parent="UseParentShader/Node2D"]
+use_parent_material = true
+position = Vector2(652, 340)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D4" type="Sprite2D" parent="UseParentShader/Node2D"]
+use_parent_material = true
+position = Vector2(848, 340)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D5" type="Sprite2D" parent="UseParentShader/Node2D"]
+use_parent_material = true
+position = Vector2(451, 342)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D6" type="Sprite2D" parent="UseParentShader/Node2D"]
+use_parent_material = true
+position = Vector2(653, 484)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D7" type="Sprite2D" parent="UseParentShader/Node2D"]
+use_parent_material = true
+position = Vector2(849, 484)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D8" type="Sprite2D" parent="UseParentShader/Node2D"]
+use_parent_material = true
+position = Vector2(452, 486)
+texture = ExtResource("4_2oi5e")
+
+[node name="ViewportMaskWithScriptInit" type="Node2D" parent="."]
+visible = false
+script = ExtResource("8_tpc17")
+
+[node name="MaskViewport" type="SubViewport" parent="ViewportMaskWithScriptInit"]
+disable_3d = true
+transparent_bg = true
+render_target_update_mode = 4
+
+[node name="MaskQuad" type="ColorRect" parent="ViewportMaskWithScriptInit/MaskViewport"]
+material = SubResource("ShaderMaterial_8i1j7")
+offset_right = 600.0
+offset_bottom = 653.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ViewportMaskWithScriptInit"]
+clip_children = 1
+position = Vector2(537, 313)
+texture = SubResource("ViewportTexture_3b1xy")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ViewportMaskWithScriptInit/Sprite2D"]
+material = SubResource("ShaderMaterial_53vvu")
+position = Vector2(5, 45)
+scale = Vector2(3, 3)
+texture = ExtResource("4_2oi5e")
+
+[node name="ViewportMask" type="Node2D" parent="."]
+visible = false
+
+[node name="MaskViewport" type="SubViewport" parent="ViewportMask"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="MaskColorRect" type="ColorRect" parent="ViewportMask/MaskViewport"]
+material = SubResource("ShaderMaterial_3hgjy")
+offset_right = 1275.0
+offset_bottom = 723.0
+
+[node name="MaskedWindow" type="Sprite2D" parent="ViewportMask"]
+clip_children = 1
+position = Vector2(641, 359)
+texture = SubResource("ViewportTexture_exp6q")
+
+[node name="Sprite2D" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+modulate = Color(0.64, 0.4672, 0.4672, 1)
+position = Vector2(-38.625, -17.3749)
+scale = Vector2(653.25, 532.75)
+texture = SubResource("CanvasTexture_evk01")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+modulate = Color(0.799931, 0.379346, 0.154867, 1)
+position = Vector2(-38, -196.844)
+scale = Vector2(649.625, 83.6875)
+texture = SubResource("CanvasTexture_evk01")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+position = Vector2(-44, -4)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+position = Vector2(152, -4)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+position = Vector2(-245, -2)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+position = Vector2(-43, 140)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+position = Vector2(153, 140)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+position = Vector2(-244, 142)
+texture = ExtResource("4_2oi5e")

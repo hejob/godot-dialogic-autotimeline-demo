@@ -67,5 +67,21 @@ character02: [aa]うわぁ今回も見どころ満載だねぇ
 [wait_time time="121.0"]
 update character01 [animation="Tada" length="0.8"]
 character01: [aa]それではさっそくスタート！
-[wait time="1.0"]
 leave --All--
+
+[wait_time time="123.0"]
+[clear time="0.0" portraits="false" music="false" background="false" positions="false" style="false"]
+
+[wait_time time="124.0"]
+[signal arg_type="dict" arg="{"action":"start","name":"video01","scene":"video01"}"]
+[wait_time time="144.0"]
+[signal arg_type="dict" arg="{"action":"stop","name":"video01"}"]
+
+[wait_time time="145.0"]
+[signal arg_type="dict" arg="{"action":"start","name":"anim02","scene":"animation02","animation_node":"AnimationPlayerMixed","animation":"mixed"}"]
+[wait_time time="151.0"]
+[signal arg_type="dict" arg="{"action":"stop","name":"animation02"}"]
+
+[aa]Finishes
+[wait time="1.0"]
+

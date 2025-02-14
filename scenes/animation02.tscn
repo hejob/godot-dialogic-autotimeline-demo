@@ -1,0 +1,321 @@
+[gd_scene load_steps=14 format=3 uid="uid://o14k7fbuhal"]
+
+[ext_resource type="Texture2D" uid="uid://cqenb4cufneou" path="res://assets/characters/c01 normal.png" id="1_7bqm6"]
+[ext_resource type="Texture2D" uid="uid://bt7uqp7ih63r1" path="res://assets/characters/c02 normal.png" id="2_vcp3w"]
+[ext_resource type="Texture2D" uid="uid://ivcusfwd1664" path="res://icon.svg" id="4_2oi5e"]
+[ext_resource type="Shader" path="res://scenes/shaders/mask-simplex.gdshader" id="12_ifm3m"]
+
+[sub_resource type="Animation" id="Animation_dxy72"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(367, 351)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(977, 349)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ViewportMask/MaskViewport/MaskColorRect:material:shader_parameter/alpha")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ViewportMask/MaskViewport/MaskColorRect:material:shader_parameter/xx")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ViewportMask/MaskedWindow/Sprite2D3:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_glghh"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(367, 351), Vector2(148, 466)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(977, 349), Vector2(1136, 464)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.297091, 0.283493)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.273885, 0.258554)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ViewportMask/MaskViewport/MaskColorRect:material:shader_parameter/alpha")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ViewportMask/MaskViewport/MaskColorRect:material:shader_parameter/xx")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.7, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ViewportMask/MaskedWindow/Sprite2D3:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.26667, 1.53333, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.349066, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_13nvy"]
+resource_name = "viewportmask-table"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ViewportMask/MaskViewport/MaskColorRect:material:shader_parameter/alpha")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ViewportMask/MaskViewport/MaskColorRect:material:shader_parameter/xx")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ccsk"]
+_data = {
+"RESET": SubResource("Animation_dxy72"),
+"new_animation": SubResource("Animation_glghh"),
+"viewportmask-table": SubResource("Animation_13nvy")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3hgjy"]
+shader = ExtResource("12_ifm3m")
+shader_parameter/alpha = 1.0
+shader_parameter/xx = 0.5
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_exp6q"]
+viewport_path = NodePath("ViewportMask/MaskViewport")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_evk01"]
+
+[sub_resource type="Animation" id="Animation_oplqg"]
+resource_name = "new_animation"
+length = 6.0
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("new_animation", "viewportmask-table", "[stop]"),
+"times": PackedFloat32Array(0, 3, 3.6)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cyt3m"]
+_data = {
+"mixed": SubResource("Animation_oplqg")
+}
+
+[node name="Animation02" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(367, 351)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7bqm6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(977, 349)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vcp3w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7ccsk")
+}
+
+[node name="ViewportMask" type="Node2D" parent="."]
+
+[node name="MaskViewport" type="SubViewport" parent="ViewportMask"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="MaskColorRect" type="ColorRect" parent="ViewportMask/MaskViewport"]
+material = SubResource("ShaderMaterial_3hgjy")
+offset_right = 1275.0
+offset_bottom = 723.0
+
+[node name="MaskedWindow" type="Sprite2D" parent="ViewportMask"]
+clip_children = 1
+position = Vector2(641, 359)
+texture = SubResource("ViewportTexture_exp6q")
+
+[node name="Sprite2D" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+modulate = Color(0.64, 0.4672, 0.4672, 1)
+position = Vector2(-38.625, -17.3749)
+scale = Vector2(653.25, 532.75)
+texture = SubResource("CanvasTexture_evk01")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+modulate = Color(0.799931, 0.379346, 0.154867, 1)
+position = Vector2(-38, -196.844)
+scale = Vector2(649.625, 83.6875)
+texture = SubResource("CanvasTexture_evk01")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+position = Vector2(-44, -4)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+position = Vector2(152, -4)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+position = Vector2(-245, -2)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+position = Vector2(-43, 140)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+position = Vector2(153, 140)
+texture = ExtResource("4_2oi5e")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ViewportMask/MaskedWindow"]
+position = Vector2(-244, 142)
+texture = ExtResource("4_2oi5e")
+
+[node name="AnimationPlayerMixed" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cyt3m")
+}

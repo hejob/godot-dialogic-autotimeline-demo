@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b8vr6tps6cs45"]
+
+[ext_resource type="Shader" path="res://scenes/shaders/mask-simplex.gdshader" id="1_5bgdy"]
+
+[resource]
+shader = ExtResource("1_5bgdy")
+shader_parameter/alpha = 0.4
+shader_parameter/xx = 1.0

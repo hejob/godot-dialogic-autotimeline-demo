@@ -133,8 +133,8 @@ func _on_dialogic_sinal(arg: Dictionary) -> void:
 	var name = arg["name"]
 	if action == "start":
 		var scene_name = arg["scene"]
-		var animation_node = null
-		var animation_name = null
+		var animation_node = ""
+		var animation_name = ""
 		if "animation_node" in arg:
 			animation_node = arg["animation_node"]
 		if "animation" in arg:
