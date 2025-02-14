@@ -4,19 +4,17 @@
 [wait_time]
 [aa]大陸間列車　司令室
 [wait_time time="2.0"]
-join character01 left [animation="Slide In Left"]
+[signal arg_type="dict" arg="{"action":"start","name":"anim01","scene":"animation01","animation_node":"AnimationPlayer","animation":"new_animation"}"]
 character01: [aa]指揮官 お久しぶりです　ステンです　またお会いしましたね
 [wait_time time="8.0"]
-
-join character02 right [animation="Slide In Right"]
-[signal arg="startanim01"]
+[signal arg_type="dict" arg="{"action":"stop","name":"anim01"}"]
+join character01 left [animation="Slide In Left"]
 character02: [aa]やほう スコーピオンだよ 指揮官　ちゃんと元気にしてだ？
+
 [wait_time time="16.0"]
-[signal arg="stopanim01"]
-update character01 [animation="Tada" length="0.8"]
 character01: [aa]さて　いよいよやってきました　ドルフロ大型イベント 連鎖分裂　今回も私たちで詳しく解説していきたいとおもいます
 [wait_time time="26.0"]
-update character02 [animation="Tada" length="0.8"]
+join character02 right [animation="Slide In Right"]
 character02: [aa]うーん 挨拶終わりと それよりさーまだ着かないの これ以上列車に乗ってたらお尻が擦り切れっちゃうよー
 [wait_time time="39.0"]
 update character01 [animation="Tada" length="0.8"]

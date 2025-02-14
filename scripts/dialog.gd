@@ -40,6 +40,7 @@ func _input(event) -> void: # todo: what is its type?
 				Waittime.set_skip_mode(false)
 
 func show_animation_layer(scene_name: String, name: String, animation_node_name: String, animation_name: String) -> void:
+	print("show animation layer: " + scene_name + " " + name + " " + animation_node_name + " " + animation_name)
 	var node = animation_layer # find_animation_layer()
 	if not node:
 		return
@@ -97,6 +98,7 @@ func find_animation_layer() -> DialogicLayoutLayer:
 	return null
 
 func stop_animation_layer(name: String) -> void:
+	print("stop animation layer: " + name)
 	var node = animation_layer  #find_animation_layer()
 	if not node:
 		return
@@ -126,8 +128,18 @@ func stop_animation_layer(name: String) -> void:
 
 ### TODO: use signal or custom event to show/stop
 ### TODO: a scene may have or not an animation, supports both
-func _on_dialogic_sinal(arg: String) -> void:
-	if arg == "startanim01":
-		show_animation_layer("animation01", "anim01", "AnimationPlayer", "new_animation")
-	elif arg == "stopanim01":
-		stop_animation_layer("anim01")
+func _on_dialogic_sinal(arg: Dictionary) -> void:
+	var action = arg["action"]
+	var name = arg["name"]
+	if action == "start":
+		var scene_name = arg["scene"]
+		var animation_node = null
+		var animation_name = null
+		if "animation_node" in arg:
+			animation_node = arg["animation_node"]
+		if "animation" in arg:
+			animation_name = arg["animation"]
+		show_animation_layer(scene_name, name, animation_node, animation_name)
+		#show_animation_layer("animation01", "anim01", "AnimationPlayer", "new_animation")
+	elif action == "stop":
+		stop_animation_layer(name)
